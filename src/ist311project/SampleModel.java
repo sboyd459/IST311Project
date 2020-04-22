@@ -16,7 +16,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author smbillah
+ * @author Sydney
  */
 @Entity
 @Table(name = "SampleModel")

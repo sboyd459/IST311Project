@@ -4,10 +4,10 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>ist311project.SampleModel</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://ist311db.cahpdmpysbav.us-east-2.rds.amazonaws.com:3306/db0?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
-      <property name="javax.persistence.jdbc.user" value="db0_user"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://remotemysql.com:3306/v0rFLMpIHQ?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
+      <property name="javax.persistence.jdbc.user" value="v0rFLMpIHQ"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="db0_user_ist311_frl"/>
+      <property name="javax.persistence.jdbc.password" value="0R26SQyqn9"/>
     </properties>
   </persistence-unit>
 </persistence>
