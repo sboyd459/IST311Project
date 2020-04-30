@@ -4,10 +4,13 @@ import GamingProject.Customer;
 import com.mysql.cj.xdevapi.Statement;
 import com.sun.jdi.connect.spi.Connection;
 import java.net.URL;
+import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,16 +30,16 @@ import javafx.scene.Scene;
 public class SigninController implements Initializable{
     
     private Customer c1; 
+    EntityManager manager; 
     
 
     @FXML private Button clickButton;
-    @FXML private PasswordField enterFirstName;
+    @FXML private TextField enterFirstName;
     @FXML private TextField enterLastName;
     @FXML private TextField enterUsername;
     @FXML private TextField enterPassword;
     @FXML private URL url; 
     @FXML private ResourceBundle rb; 
-    JButton jb1; 
 
     /*
     Connection conn = DriverManager.getConnection(url,"", ""); 
@@ -44,11 +47,15 @@ public class SigninController implements Initializable{
     
 
     @FXML
-    void clickContinue(ActionEvent event) {
+    void clickButton(ActionEvent event) {
+        Customer newCustomer = new Customer(enterFirstName.getText(),
+                                            enterLastName.getText(),
+                                            enterUsername.getText(),
+                                            enterPassword.getText());
         
     }
 
-    public PasswordField getEnterFirstName() {
+    public TextField getEnterFirstName() {
         return enterFirstName;
     }
 
@@ -56,6 +63,7 @@ public class SigninController implements Initializable{
         Scanner scnr = new Scanner(System.in);  //takes in information from user
         String firstname = scnr.next(); 
         c1.setFirstName(firstname);
+        //this.enterFirstName = enterFirstName; 
     }
 
     public TextField getEnterLastName() {
@@ -88,10 +96,24 @@ public class SigninController implements Initializable{
         c1.setFirstName(password);
     }
     
+    
+    
      private void loadData() {
-        Query query = manager.createNameQuery();
+        Query query = manager.createNamedQuery("Customer.findAll");
+        List<Customer> data = query.getResultList();
+
+        ObservableList<Customer> odata = FXCollections.observableArrayList();
+
+        for (Customer c : data) {
+            //...   
+            System.out.println(c.getFirstName());
+            //odata.add(c);
+        }
+        
+        //Customer.setItems(odata);
     }
     
+
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -101,8 +123,15 @@ public class SigninController implements Initializable{
         enterUsername.setText("");
         enterPassword.setText("");
         
+        manager = (EntityManager) Persistence.createEntityManagerFactory("IST311ProjectPU").createEntityManager();
+        
         loadData();
+        
     }   
+
+        //Get all the items from the table as a list, then add the new person to
+        //the list
+        //tableView.getItems().add(newPerson);
 /*
     @Override
     public boolean equals(Object obj) {
