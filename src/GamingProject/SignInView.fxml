@@ -1,11 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.SigninController">
-    
+<AnchorPane id="AnchorPane" prefHeight="502.0" prefWidth="279.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GamingProject.SigninController">
+
+   <children>
+
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="492.0" prefWidth="321.0">
+
+         <children>
+
+            <Button fx:id="clickButton" layoutX="104.0" layoutY="440.0" mnemonicParsing="false" onAction="#clickButtonAction" prefHeight="29.0" prefWidth="97.0" text="Continue" />
+
+            <TextField fx:id="enterLastName" layoutX="62.0" layoutY="233.0" prefHeight="27.0" prefWidth="183.0" />
+
+            <Label layoutX="62.0" layoutY="277.0" text="Username: " />
+
+            <Label layoutX="63.0" layoutY="345.0" text="Password: " />
+
+            <Label layoutX="76.0" layoutY="20.0" text="Welcome!" textAlignment="CENTER">
+
+               <font>
+
+                  <Font size="35.0" />
+
+               </font>
+
+            </Label>
+
+            <Label layoutX="77.0" layoutY="76.0" text="Please sign in below" textAlignment="CENTER">
+
+               <font>
+
+                  <Font size="17.0" />
+
+               </font>
+
+            </Label>
+
+            <Separator layoutX="33.0" layoutY="111.0" prefHeight="6.0" prefWidth="255.0" />
+
+            <Label layoutX="62.0" layoutY="148.0" text="First Name:" />
+
+            <Label layoutX="62.0" layoutY="216.0" text="Last Name:" />
+
+            <TextField fx:id="enterUsername" layoutX="61.0" layoutY="304.0" prefHeight="27.0" prefWidth="183.0" />
+
+            <TextField fx:id="enterFirstName" layoutX="62.0" layoutY="174.0" prefHeight="27.0" prefWidth="183.0" />
+
+            <PasswordField fx:id="enterPassword" layoutX="61.0" layoutY="371.0" prefHeight="27.0" prefWidth="183.0" />
+
+         </children>
+
+      </AnchorPane>
+
+   </children>
+
 </AnchorPane>

@@ -16,7 +16,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author Sydney
+ * @author johnh2352
  */
 @Entity
 @Table(name = "Parts")
@@ -25,7 +25,8 @@ import javax.persistence.Table;
     @NamedQuery(name = "Parts.findByPartID", query = "SELECT p FROM Parts p WHERE p.partID = :partID"),
     @NamedQuery(name = "Parts.findByPartName", query = "SELECT p FROM Parts p WHERE p.partName = :partName"),
     @NamedQuery(name = "Parts.findByPartDescription", query = "SELECT p FROM Parts p WHERE p.partDescription = :partDescription"),
-    @NamedQuery(name = "Parts.findByInventory", query = "SELECT p FROM Parts p WHERE p.inventory = :inventory")})
+    @NamedQuery(name = "Parts.findByPartType", query = "SELECT p FROM Parts p WHERE p.partType = :partType"),
+    @NamedQuery(name = "Parts.findByPrice", query = "SELECT p FROM Parts p WHERE p.price = :price")})
 public class Parts implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -40,8 +41,11 @@ public class Parts implements Serializable {
     @Column(name = "PartDescription")
     private String partDescription;
     @Basic(optional = false)
-    @Column(name = "Inventory")
-    private int inventory;
+    @Column(name = "PartType")
+    private String partType;
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+    @Column(name = "Price")
+    private Double price;
 
     public Parts() {
     }
@@ -50,11 +54,11 @@ public class Parts implements Serializable {
         this.partName = partName;
     }
 
-    public Parts(String partName, int partID, String partDescription, int inventory) {
+    public Parts(String partName, int partID, String partDescription, String partType) {
         this.partName = partName;
         this.partID = partID;
         this.partDescription = partDescription;
-        this.inventory = inventory;
+        this.partType = partType;
     }
 
     public int getPartID() {
@@ -81,12 +85,20 @@ public class Parts implements Serializable {
         this.partDescription = partDescription;
     }
 
-    public int getInventory() {
-        return inventory;
+    public String getPartType() {
+        return partType;
     }
 
-    public void setInventory(int inventory) {
-        this.inventory = inventory;
+    public void setPartType(String partType) {
+        this.partType = partType;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
     @Override
@@ -111,7 +123,7 @@ public class Parts implements Serializable {
 
     @Override
     public String toString() {
-        return "Model.Parts[ partName=" + partName + " ]";
+        return "GamingProject.Parts[ partName=" + partName + " ]";
     }
     
 }

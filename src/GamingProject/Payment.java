@@ -45,6 +45,7 @@ public class Payment implements Serializable {
     private Integer cvp;
 
     public Payment() {
+
     }
 
     public Payment(Integer creditCardNumber) {

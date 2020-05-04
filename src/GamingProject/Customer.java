@@ -48,19 +48,26 @@ public class Customer implements Serializable {
     private String password;
 
     public Customer() {
-        //PreparedStatement pat = null; 
     }
 
     public Customer(String username) {
         this.username = username;
     }
 
-    public Customer(String username, int customerID, String firstName, String lastName, String password) {
-        this.username = username;
+    public Customer(int customerID, String firstName, String lastName, String username, String password) {
         this.customerID = customerID;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.username = username;
         this.password = password;
+    }
+
+    public Customer(String firstName, String lastName, String username, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.password = password;
+
     }
 
     public int getCustomerID() {
@@ -68,12 +75,12 @@ public class Customer implements Serializable {
     }
 
     public void setCustomerID(int customerID) {
-        this.customerID = customerID;
+        int i = 0;
+        i += 1;
     }
 
     public String getFirstName() {
-        String cusFN = "SELECT * FROM Customer"; 
-        return cusFN;
+        return firstName;
     }
 
     public void setFirstName(String firstName) {
@@ -128,5 +135,5 @@ public class Customer implements Serializable {
     public String toString() {
         return "Model.Customer[ username=" + username + " ]";
     }
-    
+
 }

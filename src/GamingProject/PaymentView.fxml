@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GamingProject.FXML_PaymentController">
+   <children>
+      <TextField editable="false" layoutX="15.0" layoutY="14.0" prefHeight="42.0" prefWidth="181.0" text="Payment Options">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Button fx:id="clickButtonCheckout" layoutX="482.0" layoutY="351.0" mnemonicParsing="false" onAction="#clickActionCheckout" text="Process Order" />
+      <Accordion layoutX="105.0" layoutY="165.0" />
+      <Accordion layoutX="357.0" layoutY="65.0">
+        <panes>
+          <TitledPane animated="false" text="Selected Items">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField editable="false" layoutX="14.0" layoutY="14.0" text="Case*" />
+                        <TextField editable="false" layoutX="14.0" layoutY="45.0" text="Graphics Card*" />
+                        <TextField editable="false" layoutX="14.0" layoutY="78.0" text="Processor*" />
+                        <TextField editable="false" layoutX="14.0" layoutY="110.0" text="Power Supply*" />
+                        <TextField editable="false" layoutX="14.0" layoutY="141.0" text="Mother Board*" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="Tracking Information">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField editable="false" layoutX="14.0" layoutY="60.0" prefHeight="25.0" prefWidth="149.0" text="Tracking ID: " />
+                        <TextField editable="false" layoutX="14.0" layoutY="90.0" text="Expected Delivery Date: " />
+                        <TextField editable="false" layoutX="14.0" layoutY="120.0" text="Shipping Company: " />
+                        <TextField editable="false" layoutX="14.0" layoutY="27.0" text="Order #: " />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+      <TextArea layoutX="26.0" layoutY="100.0" prefHeight="149.0" prefWidth="224.0" />
+      <TextField editable="false" layoutX="31.0" layoutY="106.0" prefHeight="25.0" prefWidth="116.0" text="Payment Info Entry" />
+      <TextField editable="false" layoutX="31.0" layoutY="140.0" prefHeight="25.0" prefWidth="82.0" text="Credit Card:" />
+      <TextField editable="false" layoutX="31.0" layoutY="175.0" prefHeight="25.0" prefWidth="99.0" text="Expiration Date:" />
+      <TextField editable="false" layoutX="31.0" layoutY="209.0" prefHeight="25.0" prefWidth="99.0" text="CCV #:" />
+      <TextField layoutX="116.0" layoutY="140.0" prefHeight="25.0" prefWidth="105.0" />
+      <TextField layoutX="138.0" layoutY="175.0" prefHeight="25.0" prefWidth="82.0" />
+      <TextField layoutX="138.0" layoutY="209.0" prefHeight="25.0" prefWidth="82.0" />
+      <TextArea layoutX="25.0" layoutY="262.0" prefHeight="102.0" prefWidth="303.0" />
+      <TextField editable="false" layoutX="31.0" layoutY="271.0" prefHeight="25.0" prefWidth="105.0" text="Part Total: " />
+      <TextField editable="false" layoutX="31.0" layoutY="301.0" prefHeight="25.0" prefWidth="105.0" text="Taxes + Shipping: " />
+      <TextField editable="false" layoutX="31.0" layoutY="333.0" prefHeight="25.0" prefWidth="105.0" text="Transaction Total: " />
+      <TextField fx:id="partTotalLabel" editable="false" layoutX="163.0" layoutY="271.0" prefHeight="25.0" prefWidth="138.0" />
+      <TextField fx:id="taxLabel" editable="false" layoutX="163.0" layoutY="301.0" prefHeight="25.0" prefWidth="138.0" />
+      <TextField fx:id="totalPriceLabel" editable="false" layoutX="163.0" layoutY="333.0" prefHeight="25.0" prefWidth="138.0" />
+      <Text layoutX="147.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$" />
+      <Text layoutX="147.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$" />
+      <Text layoutX="147.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$" />
+      <TextArea fx:id="checkOutLabel" layoutX="358.0" layoutY="307.0" prefHeight="38.0" prefWidth="234.0" />
+   </children>
+</AnchorPane>

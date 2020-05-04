@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="626.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GamingProject.FXML_PartSelectionController">
+    <children>
+        <Label layoutX="215.0" layoutY="27.0" text="Part Selection" textAlignment="CENTER">
+            <font>
+                <Font size="36.0" />
+            </font>
+        </Label>
+        <Separator layoutX="104.0" layoutY="119.0" prefHeight="5.0" prefWidth="460.0" />
+        <Button fx:id="clickButtonPartCompletion" layoutX="277.0" layoutY="553.0" mnemonicParsing="false" onAction="#changeScenePartCompletion" prefHeight="33.0" prefWidth="114.0" text="Continue" />
+        <Label layoutX="180.0" layoutY="83.0" text="Pick the individual parts for your computer system" textAlignment="CENTER" />
+        <Label layoutX="338.0" layoutY="124.0" text="Cart ">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f7f7f748" height="135.0" layoutX="292.0" layoutY="148.0" stroke="#9e9e9e" strokeType="INSIDE" width="363.0" />
+        <ComboBox fx:id="comboBox" layoutX="44.0" layoutY="197.0" onAction="#comboBoxWasUpdated" prefWidth="153.0" promptText="Available Parts" />
+        <Button fx:id="clickButtonPartSelection" layoutX="218.0" layoutY="197.0" mnemonicParsing="false" onAction="#clickActionPartSelection" text="Add Part" />
+        <Label fx:id="CaseLabel" layoutX="391.0" layoutY="155.0" prefHeight="17.0" prefWidth="257.0">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
+        <Label fx:id="ProcessorLabel" layoutX="391.0" layoutY="181.0" prefHeight="17.0" prefWidth="257.0">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
+        <Label fx:id="MotherboardLabel" layoutX="391.0" layoutY="200.0" prefHeight="23.0" prefWidth="257.0">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
+        <Label fx:id="PowerSupplyLable" layoutX="391.0" layoutY="227.0" prefHeight="17.0" prefWidth="257.0">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
+        <Label fx:id="GraphicsCardLable" layoutX="391.0" layoutY="256.0" prefHeight="17.0" prefWidth="257.0">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
+        <Text layoutX="301.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Case" />
+        <Text layoutX="298.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Processor" />
+        <Text layoutX="298.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Motherboard" />
+        <Text layoutX="298.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Power Supply" />
+        <Text layoutX="296.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Graphics Card" />
+        <TableView fx:id="partDescription1" layoutX="43.0" layoutY="305.0" prefHeight="200.0" prefWidth="613.0">
+            <columns>
+            <TableColumn fx:id="Option_1" prefWidth="183.0" text="Part Name" />
+            <TableColumn fx:id="Option_2" minWidth="0.0" prefWidth="382.0" text="Part Description" />
+            <TableColumn fx:id="Option_3" prefWidth="47.0" text="Price" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
