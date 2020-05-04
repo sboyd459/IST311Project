@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+   <children>
+      <TextField layoutX="15.0" layoutY="14.0" prefHeight="42.0" prefWidth="181.0" text="Payment Options">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Button layoutX="482.0" layoutY="351.0" mnemonicParsing="false" text="Process Order" />
+      <Accordion layoutX="105.0" layoutY="165.0" />
+      <Accordion layoutX="357.0" layoutY="65.0">
+        <panes>
+          <TitledPane animated="false" text="Selected Items">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ScrollBar layoutX="186.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="182.0" prefWidth="14.0" />
+                        <TextField layoutX="14.0" layoutY="14.0" text="Case*" />
+                        <TextField layoutX="14.0" layoutY="51.0" text="Graphics Card*" />
+                        <TextField layoutX="14.0" layoutY="90.0" text="Processor*" />
+                        <TextField layoutX="14.0" layoutY="130.0" text="Memory*" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="Tracking Information">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField layoutX="14.0" layoutY="60.0" prefHeight="25.0" prefWidth="149.0" text="Tracking ID: " />
+                        <TextField layoutX="14.0" layoutY="90.0" text="Expected Delivery Date: " />
+                        <TextField layoutX="14.0" layoutY="120.0" text="Shipping Company: " />
+                        <TextField layoutX="14.0" layoutY="27.0" text="Order #: " />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+      <TextArea layoutX="26.0" layoutY="100.0" prefHeight="149.0" prefWidth="224.0" />
+      <TextField layoutX="31.0" layoutY="106.0" prefHeight="25.0" prefWidth="116.0" text="Payment Info Entry" />
+      <TextField layoutX="31.0" layoutY="140.0" prefHeight="25.0" prefWidth="82.0" text="Credit Card:" />
+      <TextField layoutX="31.0" layoutY="175.0" prefHeight="25.0" prefWidth="99.0" text="Expiration Date:" />
+      <TextField layoutX="31.0" layoutY="209.0" prefHeight="25.0" prefWidth="99.0" text="CCV #:" />
+      <TextField layoutX="116.0" layoutY="140.0" prefHeight="25.0" prefWidth="105.0" />
+      <TextField layoutX="138.0" layoutY="175.0" prefHeight="25.0" prefWidth="82.0" />
+      <TextField layoutX="138.0" layoutY="209.0" prefHeight="25.0" prefWidth="82.0" />
+      <TextArea layoutX="25.0" layoutY="262.0" prefHeight="102.0" prefWidth="303.0" />
+      <TextField layoutX="31.0" layoutY="271.0" prefHeight="25.0" prefWidth="105.0" text="Part Total: " />
+      <TextField layoutX="31.0" layoutY="301.0" prefHeight="25.0" prefWidth="105.0" text="Taxes + Shipping: " />
+      <TextField layoutX="31.0" layoutY="333.0" prefHeight="25.0" prefWidth="105.0" text="Transaction Total: " />
+      <TextField layoutX="152.0" layoutY="271.0" text="\$" />
+      <TextField layoutX="152.0" layoutY="301.0" text="\$" />
+      <TextField layoutX="152.0" layoutY="333.0" text="\$" />
+      <ScrollBar layoutX="236.0" layoutY="111.0" orientation="VERTICAL" prefHeight="129.0" prefWidth="14.0" />
+   </children>
+</AnchorPane>
